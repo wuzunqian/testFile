@@ -1,0 +1,34 @@
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+<script src="https://docs.handsontable.com/pro/1.10.0/bower_components/handsontable-pro/dist/handsontable.full.min.js"></script>
+<link type="text/css" rel="stylesheet" href="https://docs.handsontable.com/pro/1.10.0/bower_components/handsontable-pro/dist/handsontable.full.min.css">
+</head>
+<body>
+<div id="example1" ></div>
+</body>
+<script >
+var
+  example = document.getElementById('example1'),
+  hot1;
+
+hot1 = new Handsontable(example,{
+  data: Handsontable.helper.createSpreadsheetData(1000, 1000),
+  colWidths: [55, 80, 80, 80, 80, 80, 80], //can also be a number or a function
+  rowHeaders: true,
+  colHeaders: true,
+  fixedColumnsLeft: 2,
+  fixedRowsTop: 2,
+  minSpareRows: 1,
+  contextMenu: true   ,
+    autoRowSize: false,
+  autoColSize: false  ,
+      	  width: $(window).width()-100, //这个一定要设置！！！！不然卡死你
+	  height: $(window).height()-100
+});
+
+hot1.render();
+
+</script>
+
+</html>
